@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.connection-level {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.level-btn {
+    background-color: #f44336; /* red for decrement */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+    font-weight:bolder;
+}
+
+.increment {
+    background-color: #4caf50; /* green for increment */
+}
+
+.chat-list {
+    position: absolute;
+    bottom: 80px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.chat-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.close-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateX(100px);
+    position: absolute;
+    z-index: 2;
+}
+
+.floating-btn.chat-btn {
+    right: 80px;
+    bottom: 20px;
+}
+
+.floating-btn.other-btn {
+    right: 140px;
+    bottom: 20px;
+    background: #28a745; /* green */
+}
+
+.arrow-btn {
+    right: 20px;
+    bottom: 20px;
+    background: #6c757d; /* gray */
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.floating-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.floating-buttons.open .floating-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+    .chat-list {
+        width: 90%;
+        max-width: none;
+    }
+
+    .floating-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
